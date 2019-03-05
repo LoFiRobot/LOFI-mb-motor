@@ -242,9 +242,8 @@ namespace motor {
             initPCA9685()
         }
         // 100hz
-        let v_us = (degree * 10 + 600) // 0.6ms ~ 2.4ms
-        // let value = v_us * 4095 / (1000000 / 100)
-        let value = (v_us * 4095) / (4747)
+        let v_us = (degree * 10 + 900) // 0.6ms ~ 2.4ms
+        let value = ( v_us * 4095 ) / ( 10000 )
         setPwm(index + 7, 0, value)
     }
 

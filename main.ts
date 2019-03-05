@@ -242,8 +242,8 @@ namespace motor {
             initPCA9685()
         }
         // 100hz
-        let v_us = ( degree * 10 ) - 600 // 0.6ms ~ 2.4ms
-        let value = ( v_us * 4095 ) / ( 10000 )
+        // https://howtomechatronics.com/how-it-works/how-servo-motors-work-how-to-control-servos-using-arduino/
+        let value = ( degree * 4095 ) / ( 1800 )
         setPwm(index + 7, 0, value)
     }
 

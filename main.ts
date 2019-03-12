@@ -235,7 +235,7 @@ namespace motor {
 	*/
     //% blockId=motor_servo block="Servo|%index|degree|%degree"
     //% weight=100
-    //% degree.min=0 degree.max=180
+    //% degree.min=0 degree.max=270
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=4
     export function servo(index: Servos, degree: number): void {
         if (!initialized) {
@@ -247,7 +247,8 @@ namespace motor {
         // https://github.com/KitronikLtd/pxt-kitronik-I2C-16-servo/blob/master/I2CServo.ts
         // 50hz 20000 us
         
-        let v_us = (degree * 1800) / (180 + 600)    // 0.6 ~ 2.4
+        // let v_us = (degree * 1800) / (180 + 600)    // 0.6 ~ 2.4
+        let v_us = (degree * 2700) / (270 + 0)    // 0.6 ~ 2.4
         let value = (v_us * 4096) / 20000
         setPwm(index + 7, 0, value)
 

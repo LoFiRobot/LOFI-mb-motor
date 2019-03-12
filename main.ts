@@ -246,10 +246,9 @@ namespace motor {
         // https://howtomechatronics.com/how-it-works/how-servo-motors-work-how-to-control-servos-using-arduino/
         // https://github.com/KitronikLtd/pxt-kitronik-I2C-16-servo/blob/master/I2CServo.ts
         // 50hz 20000 us
-        // 0.6 ~ 2.4
-
-        let v_us = (degree * 1800 / 180 + 750)
-        let value = v_us * 4096 / 20000
+        
+        let v_us = (degree * 1800) / (180 + 600)    // 0.6 ~ 2.4
+        let value = (v_us * 4096) / 20000
         setPwm(index + 7, 0, value)
 
     }

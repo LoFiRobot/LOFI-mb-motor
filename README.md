@@ -1,4 +1,4 @@
-# DF-Driver
+# DF-Driver (LOFI fork)
 
 Micro:bit motor drive expansion board.
 ---------------------------------------------------------
